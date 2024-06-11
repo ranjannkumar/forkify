@@ -4,8 +4,8 @@
   "description": "Recipe application",
   "default": "index.html",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "start": "node init && parcel index.html",
+    "build": "node init && parcel build index.html --dist-dir ./dist"
   },
   "author": "Ranjan",
   "license": "ISC",
