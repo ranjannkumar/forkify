@@ -36,7 +36,7 @@ const createRecipeObject=function(data){
 //This function loadRecipe fetches a recipe from the Forkify API using the provided id, processes the received data, handles potential errors, stores the relevant recipe information in a state.recipe object, and logs it to the console. The function uses modern JavaScript features like async/await, destructuring, and template literals for clean and readable code.
 export const loadRecipe=async function(id){
   try{
-    const data=await AZAX(`${API_URL}${id}?key=${KEY}`);
+    const data=await AJAX(`${API_URL}${id}?key=${KEY}`);
     state.recipe=createRecipeObject(data);
 
 
@@ -56,7 +56,7 @@ console.log(state.recipe);
 export const loadSearchResults=async function(query){
   try{
     state.search.query=query;
-    const data=await AZAX(`${API_URL}?search=${query}&key=${KEY}`);
+    const data=await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
     console.log(data);
     state.search.results=data.data.recipes.map(rec=>{
       return {
